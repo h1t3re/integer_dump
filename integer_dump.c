@@ -19,16 +19,12 @@ const int and_operation(const int number, const int mask_shifted)
 
 void convert_integer_to_binary(int *array, const int number)
 {
-	int mask_shifted = 0;
-	int and_result = 0;
 	int i = 0;
 	while(i < 32)
 	{
-		mask_shifted = shift_mask_left(i);
-		and_result = and_operation(number, mask_shifted);
+		const int mask_shifted = shift_mask_left(i);
+		const int and_result = and_operation(number, mask_shifted);
 		array[i] = shift_result_right(and_result, i);
 		i = i +1;
-		mask_shifted = 0;
-		and_result = 0;
 	}
 }
