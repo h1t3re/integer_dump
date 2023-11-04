@@ -24,7 +24,7 @@ void convert_integer_to_binary(int *array, const int number)
 	int i = 0;
 	while(i < 32)
 	{
-		mask_shifted = shift_mask(i);
+		mask_shifted = shift_mask_left(i);
 		and_result = and_operation(number, mask_shifted);
 		array[i] = shift_result_right(and_result, i);
 		i = i +1;
